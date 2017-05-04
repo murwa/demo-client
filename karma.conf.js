@@ -13,6 +13,7 @@ module.exports = function (config) {
             'bower_components/angular-material/angular-material.js',
             'bower_components/angular-ui-router/release/angular-ui-router.js',
             'bower_components/satellizer/dist/satellizer.js',
+            'bower_components/angular-loading-bar/src/loading-bar.js',
             'components/**/*.js',
             'views/**/*.js',
             'tests/**/*.js',

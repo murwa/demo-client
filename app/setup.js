@@ -3,7 +3,8 @@
  */
 angular.module('demo.setup', [
     'ngMaterial',
-    'satellizer'
+    'satellizer',
+    'angular-loading-bar'
 ])
     .config([
         '$mdIconProvider',
