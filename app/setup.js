@@ -24,5 +24,5 @@ angular.module('demo.setup', [
             $authProvider.loginUrl = env.apiUrl + '/auth'
         }])
     .constant('env', {
-        apiUrl: 'http://demo.atm.dev/api'
+        apiUrl: 'https://demo-atm.herokuapp.com/api'
     });
