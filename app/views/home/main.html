@@ -1,0 +1,43 @@
+<div layout="column" flex="auto">
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Hello</span>
+                <span class="md-subhead">Pick an option</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content layout="row" layout-align="start end">
+            <md-list ng-cloak>
+                <md-list-item>
+                    <md-button ui-sref="balance">
+                        <md-icon md-svg-icon="action:account_balance"></md-icon>
+                        Check Balance
+                    </md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button ui-sref="deposit">
+                        <md-icon md-svg-icon="action:store"></md-icon>
+                        Deposit
+                    </md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button ui-sref="withdraw">
+                        <md-icon md-svg-icon="action:pan_tool"></md-icon>
+                        Withdraw
+                    </md-button>
+                </md-list-item>
+                <md-list-item>
+                    <md-button ui-sref="transfer">
+                        <md-icon md-svg-icon="action:swap_horiz"></md-icon>
+                        Transfer
+                    </md-button>
+                </md-list-item>
+            </md-list>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button type="submit" class="md-raised md-warn" ui-sref="auth">
+                Logout
+            </md-button>
+        </md-card-actions>
+    </md-card>
+</div>

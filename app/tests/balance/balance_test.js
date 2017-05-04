@@ -3,15 +3,15 @@
  */
 'use strict';
 
-describe('demo.components.atm component', function () {
+describe('demo.components.balance component', function () {
     var $componentController;
-    beforeEach(module('demo.components.atm'));
+    beforeEach(module('demo.components.balance'));
 
     beforeEach(inject(function (_$componentController_) {
         $componentController = _$componentController_;
     }));
 
-    describe('atm component', function () {
+    describe('balance component', function () {
         it('should be defined', function () {
             expect($componentController).toBeDefined();
         });

@@ -1,0 +1,27 @@
+<div layout="column" flex="auto">
+    <md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Hello</span>
+                <span class="md-subhead">Transfer</span>
+            </md-card-title-text>
+        </md-card-title>
+        <form novalidate name="frmWithdrawal">
+            <md-card-content layout="row">
+                <div>
+                    <md-input-container>
+                        <label>Amount</label>
+                        <input ng-model="$ctrl.account.amount">
+                    </md-input-container>
+                </div>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button type="submit" class="md-raised md-primary" ui-sref="home">
+                    <md-icon md-svg-icon="action:home"></md-icon>
+                    Home
+                </md-button>
+                <md-button type="submit" class="md-raised md-accent">Submit</md-button>
+            </md-card-actions>
+        </form>
+    </md-card>
+</div>

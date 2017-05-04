@@ -4,7 +4,7 @@
 'use strict';
 
 describe('demo.views.atm view', function () {
-    beforeEach(module('demo.views.atm'));
+    beforeEach(module('demo.views.auth'));
 
     it('should show', function () {
         //
