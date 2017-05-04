@@ -15,12 +15,15 @@ angular.module('demo.views.home', [
             .state({
                 name: 'home',
                 parent: 'layout',
-                url: '/home',
+                url: '/home/{url:string}',
                 component: 'demoHome',
                 resolve: {
                     accounts: ['service', function (service) {
                         return service.get();
                     }]
+                },
+                params: {
+                    url: null
                 }
             })
     }]);

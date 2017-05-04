@@ -9,15 +9,23 @@ angular.module('demo.components.home', [
         templateUrl: 'views/home/main.html',
         controller: 'HomeController',
         bindings: {
-            accounts: '<'
+            accounts: '<',
+            $transition$: '<'
         }
     })
     .controller('HomeController', [function () {
         // Init
         var self = this;
         self.$onInit = function () {
-            self.account = self.accounts.data[0];
+            var url = self.$transition$.params().url;
+            if (url === null) {
+                self.account = self.accounts.data[0];
+            } else {
+                angular.forEach(self.accounts.data, function (item) {
+                    if (item.url === url) {
+                        return self.account = item;
+                    }
+                });
+            }
         }
-
-
     }]);

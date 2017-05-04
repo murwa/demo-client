@@ -10,14 +10,18 @@ angular.module('demo.components.transfer', [])
             service: '<'
         }
     })
-    .controller('TransferController', [function () {
+    .controller('TransferController', ['$state', function ($state) {
         // Init
         var self = this;
+        self.$onInit = function () {
+            self.url = self.$transition$.params().url;
+        }
 
         // Deposit
         self.save = function () {
-            return self.service.save(self.item, {endpoint: 'transfer', url: self.$transition$.params().url}).then(function (data) {
+            return self.service.save(self.item, {endpoint: 'transfer', url: self.url}).then(function (data) {
                 self.account = data.data;
+                return $state.go('home', {url: self.url});
             }).catch(function (error) {
                 console.log(error);
             })

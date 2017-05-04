@@ -10,14 +10,18 @@ angular.module('demo.components.withdraw', [])
             service: '<'
         }
     })
-    .controller('WithdrawController', [function () {
+    .controller('WithdrawController', ['$state', function ($state) {
         // Init
         var self = this;
+        self.$onInit = function () {
+            self.url = self.$transition$.params().url;
+        }
 
         // Deposit
         self.save = function () {
-            return self.service.save(self.item, {endpoint: 'withdraw', url: self.$transition$.params().url}).then(function (data) {
+            return self.service.save(self.item, {endpoint: 'withdraw', url: self.url}).then(function (data) {
                 self.account = data.data;
+                return $state.go('home', {url: self.url})
             }).catch(function (error) {
                 console.log(error);
             })

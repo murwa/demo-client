@@ -8,7 +8,7 @@ angular.module('demo.models.account.factory', [
         return $resource(env.apiUrl + '/accounts/:url/:endpoint', {url: '@url'}, {
             get: {
                 method: 'get',
-                cache: true
+                cache: false
             }
         });
     }]);
