@@ -16,6 +16,7 @@ module.exports = function (config) {
             'components/**/*.js',
             'views/**/*.js',
             'tests/**/*.js',
+            'models/**/*.js',
             'setup.js'
         ],
 

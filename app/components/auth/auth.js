@@ -2,7 +2,8 @@
  * Created by mxgel on 5/4/17.
  */
 angular.module('demo.components.auth', [
-    'satellizer'
+    'satellizer',
+    'demo.setup'
 ])
     .component('demoAuth', {
         templateUrl: 'views/auth/main.html',
@@ -11,7 +12,7 @@ angular.module('demo.components.auth', [
             //
         }
     })
-    .controller('AuthController', ['$auth', function ($auth) {
+    .controller('AuthController', ['$auth', '$state', function ($auth, $state) {
         // Init
         var self = this;
         self.$onInit = angular.noop;
@@ -19,7 +20,7 @@ angular.module('demo.components.auth', [
         // Auth
         self.auth = function () {
             return $auth.login(self.user).then(function (data) {
-                console.log(data);
+                return $state.go('home');
             }).catch(function (error) {
                 console.log(error);
             });

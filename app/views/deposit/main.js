@@ -5,13 +5,15 @@
 angular.module('demo.views.deposit', [
     'ui.router',
     'demo.components.deposit',
-    'demo.setup'
+    'demo.setup',
+    'demo.views.layouts'
 ])
 
     .config(function ($stateProvider) {
         $stateProvider.state({
             name: 'deposit',
-            url: '/deposit',
+            parent: 'layout',
+            url: '/deposit/{url:string}',
             component: 'demoDeposit'
         });
     });

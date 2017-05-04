@@ -5,13 +5,22 @@
 angular.module('demo.views.home', [
     'ui.router',
     'demo.components.home',
-    'demo.setup'
+    'demo.setup',
+    'demo.models.account.service',
+    'demo.views.layouts'
 ])
 
-    .config(function ($stateProvider) {
-        $stateProvider.state({
-            name: 'home',
-            url: '/home',
-            component: 'demoHome'
-        });
-    });
+    .config(['$stateProvider', function ($stateProvider) {
+        $stateProvider
+            .state({
+                name: 'home',
+                parent: 'layout',
+                url: '/home',
+                component: 'demoHome',
+                resolve: {
+                    accounts: ['service', function (service) {
+                        return service.get();
+                    }]
+                }
+            })
+    }]);

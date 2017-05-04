@@ -8,7 +8,8 @@ angular.module('myApp', [
     'demo.views.balance',
     'demo.views.deposit',
     'demo.views.transfer',
-    'demo.views.withdraw'
+    'demo.views.withdraw',
+    'demo.setup'
 ]).config([
     '$locationProvider',
     '$urlRouterProvider',
@@ -18,4 +19,19 @@ angular.module('myApp', [
 
         // Redirect to
         $urlRouterProvider.otherwise('/errors');
-    }]);
+    }])
+    .run(function ($transitions, $rootScope) {
+        $transitions.onStart({
+            to: function (state) {
+                return angular.isObject(state.data);
+            }
+        }, function (trans) {
+            var auth = trans.injector().get('$auth'),
+                state = trans.router.stateService,
+                data = trans.$to().data;
+            // Check auth and redirect...
+            if ((data.requireAuth === true && !auth.isAuthenticated()) || (data.requireAuth === false && auth.isAuthenticated())) {
+                return state.target(data.redirectTo);
+            }
+        });
+    });

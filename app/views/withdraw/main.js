@@ -5,13 +5,15 @@
 angular.module('demo.views.withdraw', [
     'ui.router',
     'demo.components.withdraw',
-    'demo.setup'
+    'demo.setup',
+    'demo.views.layouts'
 ])
 
     .config(function ($stateProvider) {
         $stateProvider.state({
             name: 'withdraw',
-            url: '/withdraw',
+            parent: 'layout',
+            url: '/withdraw/{url:string}',
             component: 'demoWithdraw'
         });
     });

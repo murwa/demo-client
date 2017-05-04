@@ -6,7 +6,8 @@ angular.module('demo.components.balance', [])
         templateUrl: 'views/balance/main.html',
         controller: 'BalanceController',
         bindings: {
-            //
+            $transition$: '<',
+            item: '<'
         }
     })
     .controller('BalanceController', [function () {

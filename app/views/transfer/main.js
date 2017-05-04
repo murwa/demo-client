@@ -5,13 +5,15 @@
 angular.module('demo.views.transfer', [
     'ui.router',
     'demo.components.transfer',
-    'demo.setup'
+    'demo.setup',
+    'demo.views.layouts'
 ])
 
     .config(function ($stateProvider) {
         $stateProvider.state({
             name: 'transfer',
-            url: '/transfer',
+            parent: 'layout',
+            url: '/transfer/{url:string}',
             component: 'demoTransfer'
         });
     });

@@ -5,12 +5,14 @@
 angular.module('demo.views.auth', [
     'ui.router',
     'demo.components.auth',
-    'demo.setup'
+    'demo.setup',
+    'demo.views.layouts'
 ])
 
     .config(['$stateProvider', function ($stateProvider) {
         $stateProvider.state({
             name: 'auth',
+            parent: 'layout',
             url: '/',
             component: 'demoAuth',
             data: {
