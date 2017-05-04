@@ -1,4 +1,4 @@
-<div layout="column" flex="auto">
+<md-content class="md-padding" layout="row" layout-align="center center">
     <md-card>
         <md-card-title>
             <md-card-title-text>
@@ -12,13 +12,10 @@
                 </div>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
-                <md-button type="submit" class="md-raised md-warn" ui-sref="auth">
-                    Logout
-                </md-button>
                 <md-button type="submit" class="md-raised md-primary" ui-sref="home({url: $ctrl.item.url})">
                     <md-icon md-svg-icon="action:home"></md-icon>
                     Home
                 </md-button>
             </md-card-actions>
     </md-card>
-</div>
+</md-content>
