@@ -19,6 +19,6 @@ app.get('*', function (req, res, next) {
     res.sendFile(path.resolve('app/index.html'));
 });
 
-app.listen(3000, function () {
-    console.log('Listening on port 3000!')
+app.listen(80, function () {
+    console.log('Listening on port 80!')
 })
