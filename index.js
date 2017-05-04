@@ -9,7 +9,8 @@
 
 var express = require('express');
 var path = require('path');
-var app = express();
+var app = express(),
+    port = process.env.PORT || 3000;
 
 // serve angular front end files from root path
 app.use('/', express.static('app', {redirect: false}));
@@ -19,6 +20,6 @@ app.get('*', function (req, res, next) {
     res.sendFile(path.resolve('app/index.html'));
 });
 
-app.listen(80, function () {
-    console.log('Listening on port 80!')
+app.listen(port, function () {
+    console.log('Listening on port ' + port + '!');
 })
