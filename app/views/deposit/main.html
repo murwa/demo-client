@@ -6,12 +6,12 @@
                 <span class="md-subhead">Deposit</span>
             </md-card-title-text>
         </md-card-title>
-        <form novalidate name="frmWithdrawal">
+        <form novalidate name="frmDeposit" ng-submit="frmDeposit.$valid && $ctrl.save()">
             <md-card-content layout="row">
                 <div>
                     <md-input-container>
                         <label>Amount</label>
-                        <input ng-model="$ctrl.account.amount">
+                        <input type="number" ng-model="$ctrl.item.amount" required>
                     </md-input-container>
                 </div>
             </md-card-content>

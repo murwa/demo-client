@@ -2,16 +2,22 @@
     <md-card>
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Hello</span>
+                <span class="md-headline">Fund Transfer</span>
                 <span class="md-subhead">Transfer</span>
             </md-card-title-text>
         </md-card-title>
-        <form novalidate name="frmWithdrawal">
+        <form novalidate name="frmTransfer" ng-submit="frmTransfer.$valid && $ctrl.save()">
             <md-card-content layout="row">
                 <div>
                     <md-input-container>
                         <label>Amount</label>
-                        <input ng-model="$ctrl.account.amount">
+                        <input ng-model="$ctrl.item.amount" type="number" required>
+                    </md-input-container>
+                </div>
+                <div>
+                    <md-input-container>
+                        <label>Account</label>
+                        <input ng-model="$ctrl.item.account" type="number" required>
                     </md-input-container>
                 </div>
             </md-card-content>
