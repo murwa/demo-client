@@ -3,11 +3,14 @@
  */
 angular.module('demo.setup', [
     'ngMaterial',
+    'satellizer'
 ])
     .config([
         '$mdIconProvider',
         '$mdThemingProvider',
-        function ($mdIconProvider, $mdThemingProvider) {
+        '$authProvider',
+        'env',
+        function ($mdIconProvider, $mdThemingProvider, $authProvider, env) {
             // Theming
             $mdThemingProvider.theme('blue')
                 .primaryPalette('pink')
@@ -15,4 +18,10 @@ angular.module('demo.setup', [
             // Icons
             $mdIconProvider
                 .iconSet('action', 'icon-sets/action-icons.svg', 24);
-        }]);
+
+            // Auth
+            $authProvider.loginUrl = env.apiUrl + '/auth'
+        }])
+    .constant('env', {
+        apiUrl: 'http://demo.atm.dev/api'
+    });

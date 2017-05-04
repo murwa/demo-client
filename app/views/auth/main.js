@@ -8,10 +8,14 @@ angular.module('demo.views.auth', [
     'demo.setup'
 ])
 
-    .config(function ($stateProvider) {
+    .config(['$stateProvider', function ($stateProvider) {
         $stateProvider.state({
             name: 'auth',
             url: '/',
-            component: 'demoAuth'
+            component: 'demoAuth',
+            data: {
+                requireAuth: false,
+                redirectTo: 'home'
+            }
         });
-    });
+    }]);

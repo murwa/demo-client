@@ -6,7 +6,7 @@
                 <span class="md-subhead">Login</span>
             </md-card-title-text>
         </md-card-title>
-        <form novalidate name="frmLogin">
+        <form novalidate name="frmLogin" ng-submit="frmLogin.$valid && $ctrl.auth()">
             <md-card-content layout="row">
                 <div>
                     <md-input-container>
@@ -22,7 +22,7 @@
                 </div>
             </md-card-content>
             <md-card-actions layout="row" layout-align="end center">
-                <md-button ui-sref="home" class="md-raised md-accent">Login</md-button>
+                <md-button type="submit" class="md-raised md-accent">Login</md-button>
             </md-card-actions>
         </form>
     </md-card>
